@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Address>
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@inject IDateTime systemDateTime
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@ViewData["Message"]
+
+Dependency Injection: @systemDateTime.Now
+<h2>
+    Root: @Configuration["Root:Data:StringData"]
+</h2>
+@await Html.PartialAsync("PartialView.cshtml")
+@{
+    foreach (var address in Model)
+    {
+        @address.Name
+    }
+}

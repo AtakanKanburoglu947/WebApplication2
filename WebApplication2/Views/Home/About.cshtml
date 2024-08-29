@@ -1,0 +1,12 @@
+﻿@model WebApplication2.Models.Address
+@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+@ViewBag.Greeting
+<p>Use this area to provide additional information.</p>
+<address>
+    @Model.State <br />
+    @Model.City, @Model.State
+</address>
